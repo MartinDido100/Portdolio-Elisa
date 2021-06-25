@@ -277,8 +277,10 @@ body {
 }
 
 .main__contact {
-  max-width: 100%;
-  height: 600px;
+  padding: 0 16px;
+  margin: auto;
+  max-width: 543px;
+  height: 749px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -287,10 +289,15 @@ body {
 
 .main__contact-p {
   color: #0F0A0A;
-  width: 100%;
   font-family: 'Oxygen',sans-serif;
   font-weight: 100;
   margin-top: 16px;
+}
+
+@media (max-width: 325px) {
+  .main__contact-p {
+    font-size: 10.9px;
+  }
 }
 
 .main__contact-text {
@@ -307,14 +314,12 @@ body {
 
 .main__contact-title {
   text-align: center;
-  max-width: 543px;
   height: 132px;
 }
 
 .main__form {
-  max-width: 543px;
-  height: 433px;
   margin-top: 24px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -323,7 +328,6 @@ body {
 .main__form button {
   cursor: pointer;
   background: #42E2B8;
-  width: 100%;
   height: 49px;
   text-align: center;
   font-size: 14px;
@@ -335,7 +339,6 @@ body {
 }
 
 .main__form textarea {
-  width: 100%;
   height: 134px;
   resize: none;
   font-size: 15px;
@@ -350,8 +353,6 @@ body {
   border-radius: 8px;
   border: 1px solid #858C94;
   background: #FFFFFF;
-  width: 100%;
-  height: 50px;
   margin-bottom: 16px;
 }
 
@@ -590,6 +591,7 @@ body {
 }
 
 .main__proyect-p {
+  margin: 16px 0;
   font-family: 'Oxygen',sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -680,6 +682,7 @@ body {
 }
 
 .footer__li {
+  margin-right: 10px;
   border: 2px solid #0F0A0A;
   border-radius: 4px;
   width: 44px;
