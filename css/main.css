@@ -278,7 +278,7 @@ body {
 
 .main__contact {
   padding: 0 16px;
-  margin: auto;
+  margin: 0 auto;
   max-width: 543px;
   height: 749px;
   display: flex;
@@ -391,6 +391,7 @@ body {
 @media (max-width: 420px) {
   .main__opinion {
     padding: 24px;
+    margin-bottom: 80px;
   }
 }
 
@@ -457,6 +458,7 @@ body {
   .main__opinion-p {
     line-height: 25px;
     text-align: left;
+    font-size: 13px;
   }
 }
 
@@ -503,6 +505,7 @@ body {
 @media (max-width: 450px) {
   .main__proyect {
     padding: 5%;
+    margin-bottom: 40px;
   }
 }
 
@@ -650,7 +653,7 @@ body {
 @media (max-width: 440px) {
   .main__start {
     margin-bottom: 120px;
-    padding: 0 50px;
+    padding: 16px;
   }
 }
 
@@ -670,8 +673,9 @@ body {
 
 @media (max-width: 440px) {
   .main__start-p {
-    font-size: 30px;
-    text-align: left;
+    font-size: 23px;
+    line-height: 30px;
+    text-align: center;
   }
 }
 

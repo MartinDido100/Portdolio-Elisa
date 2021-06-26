@@ -168,7 +168,7 @@ body{
 .main {
     &__contact {
         padding: 0 16px;
-        margin: auto;
+        margin: 0 auto;
         max-width: 543px;
         height: 749px;
         display: flex;
@@ -269,6 +269,7 @@ body{
         }
         @media (max-width: 420px){
             padding: 24px;
+            margin-bottom: 80px;
         }
     }
 
@@ -314,6 +315,7 @@ body{
         @media (max-width: 545px){
             line-height: 25px;
             text-align: left;
+            font-size: 13px;
         }
         @media (max-width: 320px){
             font-size: 10px;
@@ -348,6 +350,7 @@ body{
         }
         @media (max-width: 450px){
             padding: 5%;
+            margin-bottom: 40px;
         }
         &:nth-child(4){
             flex-direction: row;
@@ -460,7 +463,7 @@ body{
         }
         @media (max-width: 440px){
             margin-bottom: 120px;
-            padding: 0 50px;
+            padding: 16px;
         }
     }
 
@@ -477,8 +480,9 @@ body{
         font-family: 'Oxygen',sans-serif;
         font-weight: 100;
         @media (max-width: 440px){
-            font-size: 30px;
-            text-align: left;
+            font-size: 23px;
+            line-height: 30px;
+            text-align: center;
         }
     }
 
