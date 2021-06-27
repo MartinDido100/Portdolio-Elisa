@@ -1,4 +1,4 @@
-@import './imports/_reset.scss', './imports/_variables.scss', './imports/_mixins.scss';
+@import './imports/_reset.scss', './imports/_variables.scss', './imports/_mixins.scss','./imports/_animatios.scss';
 
 body{
     background: $body-background;
@@ -14,6 +14,25 @@ a{
     justify-content: center;
     align-items: center;
     font-family: 'Oxygen',sans-serif;
+    position: relative;
+    & .hover{
+        border-radius: 50px;
+        content: '';
+        position: absolute;
+        background: rgba(255, 255, 255, 0.541);
+        width: 0;
+        height: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 0;
+        transition: all 1s;
+    }
+}
+
+.low-border .hover{
+    border-radius: 1px;
 }
 
 .header {
@@ -33,17 +52,19 @@ a{
     }
 
     &__button {
+        position: relative;
         cursor: pointer;
         background: $button-colors;
         width: 250px;
         height: 49px;
-        text-align: center;
         font-size: 14px;
-        padding: 13px 24px;
         border-radius: 90px;
         border: 2px solid #0f0A0A;
         font-weight: 700;
         box-shadow: -4px 4px 14px rgba(0, 0, 0, 0.25);
+        & a{
+         border-radius: 50px;
+        }
         @media (max-width: 420px){
             width: 200px;
             font-size: 10px;
@@ -106,6 +127,9 @@ a{
         font-family: 'Oxygen', sans-serif;
         font-weight: 700;
         cursor: pointer;
+        & a::after{
+            display: none;
+        }
     }
 
     &__faq-ul{
@@ -220,7 +244,7 @@ a{
         flex-direction: column;
         justify-content: center;
         & button{
-            cursor: pointer;
+            cursor:not-allowed;
             background: #37c09b91;
             height: 49px;
             text-align: center;
@@ -486,6 +510,7 @@ a{
         width: 80px;
         height: 80px;
         margin-top: 24px;
+        animation: moveDown 1.8s infinite ease-in-out;
     }
 
     &__start-p {
