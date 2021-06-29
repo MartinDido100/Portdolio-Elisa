@@ -21,10 +21,6 @@ const verifyVisibility = entries =>{
         if (entry.isIntersecting) {
            entry.target.firstChild.nextSibling.classList.add('main__proyect-phone-active');
            entry.target.lastChild.previousSibling.classList.add('main__proyect-text-active');
-        }else{
-            entry.target.firstChild.nextSibling.classList.remove('main__proyect-phone-active');
-            entry.target.lastChild.previousSibling.classList.remove('main__proyect-text-active');
-
         }
     }
 }
@@ -32,3 +28,22 @@ const verifyVisibility = entries =>{
 const observer = new IntersectionObserver(verifyVisibility);
 
 proyects.forEach(x => observer.observe(x));
+
+const form = document.querySelector(".main__form");
+const text = document.getElementById("text");
+const email = document.getElementById("email");
+const sendButton = document.getElementById("submit");
+
+form.addEventListener("input",()=>{
+    if (text.value.length > 0 && email.value.length > 0) {
+        sendButton.removeAttribute("disabled");
+        sendButton.style.background = "#42E2B8";
+        sendButton.style.border = "2px solid black";
+        sendButton.style.cursor = "pointer";
+    }else{
+        sendButton.setAttribute("disabled","");
+        sendButton.style.background = "";
+        sendButton.style.border = "";
+        sendButton.style.cursor = "";
+    }
+})
