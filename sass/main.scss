@@ -18,7 +18,7 @@ a{
         border-radius: 50px;
         content: '';
         position: absolute;
-        background: rgba(255, 255, 255, 0.541);
+        background: rgba(255, 255, 255, 0.253);
         width: 0;
         height: 100%;
         left: 0;
@@ -26,11 +26,18 @@ a{
         bottom: 0;
         margin: auto;
         opacity: 0;
-        transition: all 1s;
+        transition: width .2s ease,opacity .3s ease;
+    }
+    &:hover{
+        & .hover{
+            width: 100%;
+            opacity: 1;
+        }
     }
 }
 
 .low-border .hover{
+    width: 0;
     border-radius: 1px;
 }
 
@@ -260,7 +267,8 @@ a{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        & button{
+        & .main__form-submit{
+            position: relative;
             transition: all .2s ease-out;
             cursor:not-allowed;
             background: #37c09b91;
@@ -272,6 +280,27 @@ a{
             border: 2px solid #0f0a0a70;
             font-weight: 700;
             box-shadow: -4px 4px 14px rgba(0, 0, 0, 0.25);
+            &::after{
+                background: rgba(255, 255, 255, 0.253);
+                border-radius: 50px;
+                margin: auto;
+                position: absolute;
+                content: '';
+                width: 0;
+                opacity: 0;
+                height: 100%;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                transition: width .2s ease,opacity .3s ease;
+            }
+            &-active:hover{
+                color: rgb(0, 44, 26);
+                &::after{
+                    opacity: .7;
+                    width: 100%;
+                }
+            }
         }
         & textarea{
            height: 134px;
@@ -301,6 +330,14 @@ a{
         width: 170px;
         font-size: 16px;
         margin-bottom: 8px;
+    }
+
+    &__validation-error{
+        color: rgb(0, 0, 0);
+        font-family: 'Oxygen',sans-serif;
+        margin-top: 20px;
+        line-height: 35px;
+        align-self: flex-start;
     }
 
     &__opinion {
@@ -384,6 +421,9 @@ a{
         @media (max-width: 1140px){
             margin-bottom: 52px;
             padding-left: 0;
+        }
+        &-inverted{
+            transform: translateX(-200px);
         }
         &-active{
             transform: translateX(0);
@@ -501,6 +541,9 @@ a{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        &-inverted{
+            transform: translateX(200px);
+        }
         &-active{
             transform: translateX(0);
             opacity: 1;
@@ -608,3 +651,4 @@ a{
         justify-content: space-between;
     }
 }
+

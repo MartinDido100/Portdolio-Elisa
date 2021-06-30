@@ -48,11 +48,6 @@ h6 {
   hyphens: auto;
 }
 
-::selection {
-  background-color: black;
-  color: white;
-}
-
 form input,
 form textarea,
 form select {
@@ -88,15 +83,18 @@ body {
 
 @keyframes hoverEffect {
   0% {
+    width: 0;
     opacity: 0;
   }
-  50% {
-    opacity: .8;
+  40% {
     width: 100%;
+  }
+  60% {
+    opacity: .8;
   }
   100% {
-    opacity: 0;
     width: 100%;
+    opacity: 1;
   }
 }
 
@@ -120,7 +118,7 @@ a .hover {
   border-radius: 50px;
   content: '';
   position: absolute;
-  background: rgba(255, 255, 255, 0.541);
+  background: rgba(255, 255, 255, 0.253);
   width: 0;
   height: 100%;
   left: 0;
@@ -128,10 +126,16 @@ a .hover {
   bottom: 0;
   margin: auto;
   opacity: 0;
-  transition: all 1s;
+  transition: width .2s ease,opacity .3s ease;
+}
+
+a:hover .hover {
+  width: 100%;
+  opacity: 1;
 }
 
 .low-border .hover {
+  width: 0;
   border-radius: 1px;
 }
 
@@ -405,7 +409,8 @@ a .hover {
   justify-content: center;
 }
 
-.main__form button {
+.main__form .main__form-submit {
+  position: relative;
   transition: all .2s ease-out;
   cursor: not-allowed;
   background: #37c09b91;
@@ -417,6 +422,30 @@ a .hover {
   border: 2px solid #0f0a0a70;
   font-weight: 700;
   box-shadow: -4px 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.main__form .main__form-submit::after {
+  background: rgba(255, 255, 255, 0.253);
+  border-radius: 50px;
+  margin: auto;
+  position: absolute;
+  content: '';
+  width: 0;
+  opacity: 0;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: width .2s ease,opacity .3s ease;
+}
+
+.main__form .main__form-submit-active:hover {
+  color: #002c1a;
+}
+
+.main__form .main__form-submit-active:hover::after {
+  opacity: .7;
+  width: 100%;
 }
 
 .main__form textarea {
@@ -447,6 +476,14 @@ a .hover {
   width: 170px;
   font-size: 16px;
   margin-bottom: 8px;
+}
+
+.main__validation-error {
+  color: black;
+  font-family: 'Oxygen',sans-serif;
+  margin-top: 20px;
+  line-height: 35px;
+  align-self: flex-start;
 }
 
 .main__opinion {
@@ -564,6 +601,10 @@ a .hover {
     margin-bottom: 52px;
     padding-left: 0;
   }
+}
+
+.main__proyect-phone-inverted {
+  transform: translateX(-200px);
 }
 
 .main__proyect-phone-active {
@@ -709,6 +750,10 @@ a .hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.main__proyect-text-inverted {
+  transform: translateX(200px);
 }
 
 .main__proyect-text-active {
