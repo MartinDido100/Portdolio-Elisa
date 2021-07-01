@@ -1,5 +1,28 @@
 "use strict";
 
+let index = 0;
+const elisaText = document.getElementById("elisa-text");
+const hiText = document.getElementById("hi-text");
+const textoElisa = 'Soy Elisa';
+const textoHola = '¡Hola a todos!'
+
+const autoWritting = (element,text) =>{
+    if (index < text.length) {
+        element.textContent += text[index];
+        index++;
+        setTimeout(() => {
+            autoWritting(element,text);
+        }, 200);
+    }
+}
+
+
+autoWritting(hiText,textoHola);
+
+setTimeout(() => {
+    index = 0;
+    autoWritting(elisaText,textoElisa);
+}, 3300);
 
 const proyectsPhone = document.querySelectorAll(".main__proyect-phone");
 const proyects = document.querySelectorAll(".main__proyect");
@@ -75,13 +98,18 @@ const checkValidation = () =>{
     let formKeys = Object.keys(validatedData);
     let validatedIndex = formValues.findIndex(x => x == false);
     if (validatedIndex == -1){
-        alert("Formulario enviado");
         if (contact.lastChild === p) {
             contact.removeChild(p);
         }
         text.value = '';
         email.value = '';
         message.value = '';
+        modal.style.display = "flex";
+        modal.style.animation = "aparecer .3s ease-in";
+        modal.addEventListener("animtionend",()=>{
+            modal.style.animation = "none";
+
+        })
     }
     else{
         let code = '';
@@ -103,3 +131,12 @@ form.addEventListener("submit",(e)=>{
     validateMail();
     checkValidation();
 });
+
+const cross = document.getElementById("cross");
+const modal = document.querySelector(".main__form-modal-bg")
+
+
+cross.addEventListener("click",()=>{
+    modal.style.animation = "desaparecer .1s ease-in";
+    setTimeout(() => modal.style.display = "none" , 100);
+})

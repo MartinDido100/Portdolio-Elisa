@@ -14,9 +14,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <title>Portfolio de Elisa</title>
 </head>
 <body>
+    <div class="main__form-modal-bg">
+        <div class="main__form-modal-container">
+                <i class="fas fa-times" id="cross"></i>
+                <p class="main__form-modal-p">Su mensaje se ha enviado correctamente!</p>
+                <div class="main__form-modal-tick"><i class="fas fa-check"></i></div>
+        </div>
+    </div>
     <header class="header">
         <nav class="header__nav">
             <div class="header__logo">LOGO</div>
@@ -29,8 +37,8 @@
         </nav>
         <div class="header__faq">
             <div class="header__faq-text">
-                <h2 class="header__h2">¡Hola a todos!</h2>
-                <p class="header__faq-p">Soy Elisa</p>
+                <h1 class="header__h2" id="hi-text"></h1><br>
+                <p class="header__faq-p" id="elisa-text"></p>
                 <p class="header__faq-plow">Una frontend Developer que le encanta implementar diseños <br>
                                             que inspiran y atraen a las personas</p>
                 <div class="header__faq-logos">
@@ -146,6 +154,7 @@
             <li class="footer__li"><a href="#" class="low-border effect"><div class="hover"></div><img src="assets/svg/twitter.svg" alt="Twitter - Icon" class="footer__img"></a></li>
         </ul>
     </footer>
+    
     <script type="text/javascript" src="./js/app.js"></script>
 </body>
 </html>
