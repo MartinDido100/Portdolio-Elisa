@@ -272,7 +272,10 @@ a{
             display: flex;
             align-items: center;
             justify-content: center;
-            display: none;
+            padding: 0 30px;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .2s ease-in-out;
         }
         &-container{
             border-radius: 10px;
@@ -291,12 +294,21 @@ a{
                 top: 13px;
                 right: 30px;
                 cursor: pointer;
+                transition: transform .1s;
+                &:hover{
+                    transform: scale(1.2);
+                }
             }
         }
         &-p{
+            text-align: center;
+            padding: 0 5px;
             margin-top: 20px;
             font-family: 'Oxygen',sans-serif;
             font-size: 25px;
+            @media (max-width:370px){
+                font-size: 15px;
+            }
         }
         &-tick{
             border: 3px solid rgb(63, 165, 63);

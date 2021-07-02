@@ -26,22 +26,3 @@
         opacity: 1;
     }
 }
-
-@keyframes aparecer{
-    0%{
-        display: none;
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-
-@keyframes desaparecer{
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
-}

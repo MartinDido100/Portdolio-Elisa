@@ -98,25 +98,6 @@ body {
   }
 }
 
-@keyframes aparecer {
-  0% {
-    display: none;
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes desaparecer {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 body {
   position: relative;
   background: linear-gradient(135deg, #FAD7A1 0%, #E96D71 100%);
@@ -430,7 +411,10 @@ a:hover .hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  display: none;
+  padding: 0 30px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .2s ease-in-out;
 }
 
 .main__form-modal-container {
@@ -452,12 +436,25 @@ a:hover .hover {
   top: 13px;
   right: 30px;
   cursor: pointer;
+  transition: transform .1s;
+}
+
+.main__form-modal-container #cross:hover {
+  transform: scale(1.2);
 }
 
 .main__form-modal-p {
+  text-align: center;
+  padding: 0 5px;
   margin-top: 20px;
   font-family: 'Oxygen',sans-serif;
   font-size: 25px;
+}
+
+@media (max-width: 370px) {
+  .main__form-modal-p {
+    font-size: 15px;
+  }
 }
 
 .main__form-modal-tick {

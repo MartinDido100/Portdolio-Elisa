@@ -104,12 +104,8 @@ const checkValidation = () =>{
         text.value = '';
         email.value = '';
         message.value = '';
-        modal.style.display = "flex";
-        modal.style.animation = "aparecer .3s ease-in";
-        modal.addEventListener("animtionend",()=>{
-            modal.style.animation = "none";
-
-        })
+        modal.style.visibility = "visible";
+        modal.style.opacity = "1";
     }
     else{
         let code = '';
@@ -137,6 +133,6 @@ const modal = document.querySelector(".main__form-modal-bg")
 
 
 cross.addEventListener("click",()=>{
-    modal.style.animation = "desaparecer .1s ease-in";
-    setTimeout(() => modal.style.display = "none" , 100);
+    modal.style.opacity = "0";
+    modal.style.visibility = "hidden";
 })
